@@ -1,0 +1,1 @@
+https://tecadmin.net/how-to-install-net-core-on-ubuntu-20-04/
