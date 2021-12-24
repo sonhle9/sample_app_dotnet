@@ -4,42 +4,65 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - sample_app_dotnet</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">sample_app_dotnet</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <a id="logo" href="/">sample app</a>
+        <nav>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <ul class="nav navbar-nav navbar-right collapse navbar-collapse"
+              id="bs-example-navbar-collapse-1">
+            <li><a href="/">Home</a></li>
+            <li><a href="/help">Help</a></li>
+              <li><a href="/users">Users</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Account <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/users/118">Profile</a></li>
+                  <li><a href="/users/118/edit">Settings</a></li>
+                  <li class="divider"></li>
+                  <li>
+                    <a rel="nofollow" data-method="delete" href="/logout">Log out</a>
+                  </li>
+                </ul>
+              </li>
+          </ul>
         </nav>
+      </div>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+      @RenderBody()
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - sample_app_dotnet - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+      <footer class="footer">
+        <small>
+          The <a href="https://www.railstutorial.org/">ASP.net Tutorial</a>
+          by <a href="https://www.michaelhartl.com/">Michael Hartl</a>
+        </small>
+        <nav>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="https://news.railstutorial.org/">News</a></li>
+          </ul>
+        </nav>
+      </footer>
+
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
